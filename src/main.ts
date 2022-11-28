@@ -20,8 +20,9 @@ import { isDevMode } from './utils/env';
 if (isDevMode()) {
   import('ant-design-vue/es/style');
 }
-
+// 项目的初始化配置
 async function bootstrap() {
+  // 创建应用实例
   const app = createApp(App);
 
   // Configure store
@@ -47,7 +48,7 @@ async function bootstrap() {
   setupRouter(app);
 
   // router-guard
-  // 路由守卫
+  // 路由守卫、权限判断、初始化缓存数据
   setupRouterGuard(router);
 
   // Register global directive
